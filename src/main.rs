@@ -32,6 +32,7 @@ async fn main() {
     const W: i32 = 600;
     const H: i32 = 600;
     const MAX_ITER: u32 = 100;
+    const SEED_STEP: f32 = 0.001;
 
     let mut image = Image::gen_image_color(W as u16, H as u16, WHITE);
     let texture = Texture2D::from_image(&image);
@@ -39,10 +40,10 @@ async fn main() {
     loop {
         clear_background(WHITE);
         if is_key_down(KeyCode::Right) {
-            seed += 0.002;
+            seed += SEED_STEP;
         }
         if is_key_down(KeyCode::Left) {
-            seed -= 0.002;
+            seed -= SEED_STEP;
         }
         if is_key_down(KeyCode::Space) {
             my_colors.rotate_right(1);

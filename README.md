@@ -29,7 +29,7 @@ After loading the page, you can hold the spacebar down to recalculate with a new
 
 You can also use the left and right arrow keys to shift the value of the constant, c.
 
-Here are some example rendering:
+Here are some example renderings:
 
 ![z = z * z * sin(z) + c](image/mq.png)
 ![z = z * z * sin(z) + c](image/mq2.png)

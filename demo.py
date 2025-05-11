@@ -1,15 +1,20 @@
 """
 demo of web page running wasm
 """
-from flask import Flask, send_from_directory
+
+from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
+    """
+    deliver markup for route
+    """
     return """
-<html lang="en">
-<head>
+    <html lang="en">
+    <head>
     <meta charset="utf-8">
     <title>demo</title>
     <style>
@@ -26,12 +31,12 @@ def index():
             z-index: 0;
         }
     </style>
-</head>
-<body>
+    </head>
+    <body>
     <canvas id="glcanvas" tabindex='1'></canvas>
     <!-- Minified and statically hosted version of https://github.com/not-fl3/macroquad/blob/master/js/mq_js_bundle.js -->
     <script src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"></script>
     <script>load("/static/mqtest.wasm");</script>
-</body>
-</html>
+    </body>
+    </html>
     """

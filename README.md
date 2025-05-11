@@ -27,6 +27,10 @@ To build and run:
 
 After loading the page, you can hold the spacebar down to recalculate with a new color map.
 
-Here is an example rendering:
+You can also use the left and right arrow keys to shift the value of the constant, c.
+
+Here are some example rendering:
 
 ![z = z * z * sin(z) + c](image/mq.png)
+![z = z * z * sin(z) + c](image/mq2.png)
+![z = z * z * sin(z) + c](image/mq3.png)

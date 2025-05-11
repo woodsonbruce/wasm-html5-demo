@@ -31,17 +31,22 @@ async fn main() {
 
     const W: i32 = 600;
     const H: i32 = 600;
-    const MAX_ITER: u32 = 90;
+    const MAX_ITER: u32 = 100;
 
     let mut image = Image::gen_image_color(W as u16, H as u16, WHITE);
     let texture = Texture2D::from_image(&image);
-
+    let mut seed = 0.5;
     loop {
         clear_background(WHITE);
+        if is_key_down(KeyCode::Right) {
+            seed += 0.002;
+        }
+        if is_key_down(KeyCode::Left) {
+            seed -= 0.002;
+        }
         if is_key_down(KeyCode::Space) {
             my_colors.rotate_right(1);
         }
-        let seed = 0.5;
         let c = num::complex::Complex::new(seed, seed);
         for py in 0..H as u32 {
             let y_scaled = -1.0 + 2.0 * py as f32 / H as f32;

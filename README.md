@@ -23,6 +23,6 @@ To build and run:
 3) mkdir static
 4) cp target/wasm32-unknown-unknown/release/mqtest.wasm static/
 5) flask --app demo.py run  --host=0.0.0.0
-6) view in any modern browser at http://<your ip>:5000
+6) view in any modern browser at http://host:5000 where host is the system running the flask server
 
 After loading the page, you can hold the spacebar down to recalculate with a new color map.

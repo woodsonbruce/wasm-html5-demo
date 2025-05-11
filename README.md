@@ -16,12 +16,13 @@ Prerequisites for build:
 - Python3 and flask
 - wasm-opt binary from binaryen
 
-To build:
+To build and run:
 
 1) cargo build --release --target wasm32-unknown-unknown
 2) wasm-opt -Oz -o target/wasm32-unknown-unknown/release/mqtest.wasm target/wasm32-unknown-unknown/release/mqtest.wasm
 3) mkdir static
 4) cp target/wasm32-unknown-unknown/release/mqtest.wasm static/
 5) flask --app demo.py run  --host=0.0.0.0
+6) view in any modern browser at http://<your ip>:5000
 
 After loading the page, you can hold the spacebar down to recalculate with a new color map.

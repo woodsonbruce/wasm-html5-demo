@@ -6,7 +6,7 @@ from flask import Flask, send_from_directory
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
+def index():
     return """
 <html lang="en">
 <head>

@@ -1,0 +1,37 @@
+"""
+demo of web page running wasm
+"""
+from flask import Flask, send_from_directory
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return """
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <style>
+        html,
+        body,
+        canvas {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            background: black;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="glcanvas" tabindex='1'></canvas>
+    <!-- Minified and statically hosted version of https://github.com/not-fl3/macroquad/blob/master/js/mq_js_bundle.js -->
+    <script src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"></script>
+    <script>load("/static/mqtest.wasm");</script>
+</body>
+</html>
+    """

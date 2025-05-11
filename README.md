@@ -26,3 +26,7 @@ To build and run:
 6) view in any modern browser at http://host:5000 where host is the system running the flask server
 
 After loading the page, you can hold the spacebar down to recalculate with a new color map.
+
+Here is an example rendering:
+
+![z = z * z * sin(z) + c](image/mq.png)
